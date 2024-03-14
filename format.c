@@ -84,7 +84,9 @@ int main(int argc, char* argv[]){
 				cntr++;
 				
 			}
-			
+
+			//manuálisan lezárjuk a stringet, hogy ne maradjon bent korábbi érték sneaky módon :"D
+			ihatescale[cntr]='\0';
 			//dump the whole line to out outfile and we're done! :)
 			fprintf(out,"%s\n",ihatescale);
 		}
