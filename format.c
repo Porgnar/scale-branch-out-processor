@@ -25,19 +25,20 @@ int main(int argc, char* argv[]){
 		if(strlen(buffer)>10){
 			
 			//painstakingly counted out the character positions of scale standard output lines, this can and should be modified in case it is necessary to do so!
-			for(int i=15;i<25;i++){
+			for(int i=8;i<25;i++){//keff
 				
 				//copy character by character because the standard SCALE output is inconsistent with data types.... >:( 
-				ihatescale[cntr]=buffer[i];			
-				cntr++;
-				
+				if(buffer[i]!=' '){
+					ihatescale[cntr]=buffer[i];
+					cntr++;
+				}	
 			}
 			
 			//these are the delimiter characters rewrite these to change the output formatting
 			ihatescale[cntr]=' ';
 			cntr++;			
 		
-			for(int i=40;i<46;i++){
+			for(int i=39;i<46;i++){//time / date
 				
 				if(buffer[i]!=' '){
 					ihatescale[cntr]=buffer[i];
@@ -48,43 +49,47 @@ int main(int argc, char* argv[]){
 			ihatescale[cntr]=' ';
 			cntr++;			
 			
-			for(int i=63;i<69;i++){
+			for(int i=63;i<69;i++){//T_fuel
 				
-				ihatescale[cntr]=buffer[i];
-				cntr++;
-				
+				if(buffer[i]!=' '){
+					ihatescale[cntr]=buffer[i];
+					cntr++;
+				}	
 			}
 			
 			ihatescale[cntr]=' ';
 			cntr++;
 			
-			for(int i=74;i<79;i++){
+			for(int i=73;i<79;i++){//T_mod
 				
-				ihatescale[cntr]=buffer[i];
-				cntr++;
-				
+				if(buffer[i]!=' '){
+					ihatescale[cntr]=buffer[i];
+					cntr++;
+				}		
 			}
 			
 			ihatescale[cntr]=' ';
 			cntr++;
 			
-			for(int i=84;i<90;i++){
+			for(int i=83;i<90;i++){//moderator density tm
 				
-				ihatescale[cntr]=buffer[i];
-				cntr++;
-				
+				if(buffer[i]!=' '){
+					ihatescale[cntr]=buffer[i];
+					cntr++;
+				}	
 			}
 			
 			ihatescale[cntr]=' ';
 			cntr++;
 			
-			for(int i=97;i<100;i++){
+			for(int i=94;i<100;i++){//sb boron oncentrtion
 				
-				ihatescale[cntr]=buffer[i];
-				cntr++;
-				
+				if(buffer[i]!=' '){
+					ihatescale[cntr]=buffer[i];
+					cntr++;
+				}
 			}
-
+			
 			//manuálisan lezárjuk a stringet, hogy ne maradjon bent korábbi érték sneaky módon :"D
 			ihatescale[cntr]='\0';
 			//dump the whole line to out outfile and we're done! :)
